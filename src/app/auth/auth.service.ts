@@ -11,15 +11,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   signup(email: string, password: string) {
-    //firebase signup API here
-    // this.http.post(
-    //   `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.firebaseAPIKey}}`,
-    //   {
-    //     email,
-    //     password,
-    //     returnSecureToken: true
-    //   }
-    // );
+
   }
 
   login(email: string, password: string) {
