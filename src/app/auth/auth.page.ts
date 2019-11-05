@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { ModalController } from '@ionic/angular';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @Component({
   selector: 'app-auth',
@@ -9,14 +12,20 @@ import { Router } from '@angular/router';
 })
 export class AuthPage implements OnInit {
 
-  constructor(private authSvc: AuthService, private router: Router) { }
+  constructor(private modalCtrl: ModalController, private authSvc: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  onLogin() {
-    this.authSvc.login();
+  onLogin(f: NgForm) {
+    this.authSvc.login(f.value.email, f.value.pwd);
     this.router.navigateByUrl('/home');
   }
 
+  async presentSignUpModal() {
+    const modal = await this.modalCtrl.create({
+      component: SignUpComponent
+    });
+    return await modal.present();
+  }
 }
