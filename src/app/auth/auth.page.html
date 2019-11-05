@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>auth</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1 class='ion-text-center ion-padding-bottom'>???</h1>
+  <form #f="ngForm" (ngSubmit)="onLogin()">
+    <ion-list>
+      <ion-item>
+        <ion-label position="fixed">Email</ion-label>
+        <ion-input
+          ngModel
+          name="email"
+          type="email"
+          placeholder="Your email here"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="fixed">Password</ion-label>
+        <ion-input
+          ngModel
+          name="pwd"
+          type="password"
+          placeholder="******"
+        ></ion-input>
+      </ion-item>
+      <ion-button expand="block" type='submit'>Login</ion-button>
+    </ion-list>
+  </form>
+</ion-content>
