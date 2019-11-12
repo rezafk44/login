@@ -8,8 +8,8 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./map-modal.component.scss'],
 })
 export class MapModalComponent implements OnInit, AfterViewInit {
-  lat = 51.678418;
-  lng = 7.809007;
+  lat = 35.6595202;
+  lng = 139.6989984;
   @ViewChild('map', { static: false }) mapElementRef: ElementRef;
 
   constructor(private modalCtrl: ModalController, private renderer: Renderer2) { }
@@ -69,6 +69,7 @@ export class MapModalComponent implements OnInit, AfterViewInit {
   ngOnInit() { }
 
   onCancel() {
-    this.modalCtrl.dismiss();
+    // this.modalCtrl.dismiss();
+    this.modalCtrl.dismiss({lat: this.lat, lng: this.lng});
   }
 }
