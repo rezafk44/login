@@ -8,9 +8,9 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./map-modal.component.scss'],
 })
 export class MapModalComponent implements OnInit, AfterViewInit {
-  lat = 35.6595202;
-  lng = 139.6989984;
-  @ViewChild('map', { static: false }) mapElementRef: ElementRef;
+  lat = -6.2559647;
+  lng = 106.6162313;
+  @ViewChild('map', { static:false }) mapElementRef: ElementRef;
 
   constructor(private modalCtrl: ModalController, private renderer: Renderer2) { }
 
@@ -51,7 +51,7 @@ export class MapModalComponent implements OnInit, AfterViewInit {
     }
     return new Promise((resolve, reject) => {
       const script = document.createElement('script');
-      script.src = `https://maps.googleapis.com/maps/api/js?key=${environment.mapsAPIKey}&callback=initMap`;
+      script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyDqvejUkbbqph6J9c-IDG_MSSUrF9AjZ2Q&callback=initMap`;
       script.async = true;
       script.defer = true;
       document.body.appendChild(script);

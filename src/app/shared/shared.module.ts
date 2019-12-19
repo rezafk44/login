@@ -4,8 +4,8 @@ import { MapModalComponent } from './map-modal/map-modal.component';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 
-// import { AgmCoreModule } from '@agm/core';
-// import { environment } from 'src/environments/environment';
+import { AgmCoreModule } from '@agm/core';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
     declarations: [LocationPickerComponent, MapModalComponent],
